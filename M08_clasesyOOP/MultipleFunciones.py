@@ -1,7 +1,11 @@
 class Funciones:
     def __init__(self,lista_entrada) -> None:
+        
+        if not isinstance(lista_entrada, list) or not all(isinstance(num, int) for num in lista_entrada):
+            raise ValueError('Funciones trabaja con una lista no nula de numero enteros')
+        
         self.lista=lista_entrada
-        pass
+        
     
     def es_primo(self): 
         for i in self.lista:
@@ -11,6 +15,10 @@ class Funciones:
                 print(i,"no es numero primo")
 
     def conversion(self,origen,destino):
+        if origen and destino != str:
+            print('Origen y Destino deben estar asignados por str')
+            return
+
         for i in self.lista:
             print(i,'grados',origen,'son',self.__conversion(i,origen,destino),'grados',destino)
 
