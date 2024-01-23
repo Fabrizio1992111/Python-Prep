@@ -27,6 +27,11 @@ class Funciones:
             A ,B= self.__numero_repetido(list)
 
         print("el mas repetido de la lista es",A,'se repite',B,'veces')
+
+    def factorial(self):
+        for i in self.lista:
+            M = self.__factorial(i)
+            print("el factorial de",i,"es",M)
         
     def __es_primo(self,numero):
         
@@ -85,4 +90,13 @@ class Funciones:
             return resul
         if origen == "K" and destino == "C":
             resul = valor + 273.15
-            return resul
+            return 
+       
+    def __factorial(self, numero):
+        if numero == 0 or numero == 1:
+            return 1
+        else:
+            return numero * self.__factorial(numero - 1)
+
+        
+    
